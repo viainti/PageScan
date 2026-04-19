@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f4f4f2;
+  --bg-accent: #ecece8;
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-muted: #f3f3f1;
+  --surface-subtle: #fafaf8;
+  --text: #161616;
+  --text-soft: #727272;
+  --brand: #2563eb;
+  --brand-strong: #1d4ed8;
+  --accent: #e8f0ff;
+  --line: rgba(22, 22, 22, 0.09);
+  --line-strong: rgba(22, 22, 22, 0.14);
+  --danger-bg: #fff1ef;
+  --danger-line: #f3c8c0;
+  --danger-text: #9f3f33;
+  --shadow-soft: 0 18px 42px rgba(19, 24, 33, 0.08);
+  --shadow-card: 0 10px 24px rgba(19, 24, 33, 0.05);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans:
+    "SF Pro Text",
+    "Segoe UI",
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  --font-mono:
+    "SF Mono",
+    "JetBrains Mono",
+    "Cascadia Code",
+    "Menlo",
+    monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 390px;
+  min-height: 560px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(229, 233, 240, 0.55), transparent 28%),
+    linear-gradient(180deg, var(--bg), var(--bg-accent));
+  color: var(--text);
+  font-family: var(--font-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 60%);
+  pointer-events: none;
 }

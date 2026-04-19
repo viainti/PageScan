@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Política de Privacidad - PageScan
 
-## Getting Started
+**Última actualización:** 19 de abril de 2026
 
-First, run the development server:
+PageScan es una extensión de Chrome diseñada para extraer estilos visuales desde la pestaña activa y generar contenido en formato `DESIGN.md` o `SKILL.md`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 1. Información que procesa la extensión
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+PageScan puede leer, únicamente cuando el usuario lo solicita manualmente (botón de extracción), la siguiente información de la página activa:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- URL de la pestaña activa.
+- Título de la página.
+- Estilos visuales computados (por ejemplo: colores, tipografías, bordes y espaciado).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 2. Información que **no** recopilamos
 
-## Learn More
+PageScan **no** recopila ni almacena:
 
-To learn more about Next.js, take a look at the following resources:
+- Credenciales, contraseñas o datos de inicio de sesión.
+- Datos personales identificables del usuario.
+- Historial completo de navegación.
+- Contenido de formularios para envío a servidores externos.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 3. Uso de permisos de Chrome
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### `activeTab`
+Se usa para acceder a la pestaña activa solo cuando el usuario ejecuta la extracción.
 
-## Deploy on Vercel
+### `scripting`
+Se usa para ejecutar un script de lectura de estilos en la pestaña activa por acción explícita del usuario.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `host_permissions` (`<all_urls>`)
+Permite que la extracción funcione en cualquier sitio web que el usuario decida analizar.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 4. Almacenamiento y transferencia de datos
+
+- El procesamiento principal se realiza localmente en el navegador del usuario.
+- PageScan no envía automáticamente datos de la página a servidores de terceros.
+- El resultado generado se muestra en el popup y el usuario decide si copiarlo.
+
+## 5. Compartición de información
+
+PageScan no vende, alquila ni comparte información del usuario con terceros.
+
+## 6. Seguridad
+
+PageScan opera bajo el modelo de permisos de Chrome y limita su funcionamiento a acciones iniciadas por el usuario.
+
+## 7. Cambios a esta política
+
+Esta política puede actualizarse para reflejar mejoras del producto o requisitos regulatorios. La fecha de “Última actualización” indicará la versión vigente.
+
+## 8. Contacto
+
+Si tienes dudas sobre esta política de privacidad, contacta al responsable del proyecto PageScan a través del canal oficial publicado en la ficha de Chrome Web Store.

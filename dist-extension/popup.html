@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>vpages</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <header class="topbar">
+          <div class="brand">
+            <div class="brand-mark">P</div>
+            <div class="brand-copy">
+              <h1>PageScan</h1>
+              <p>Extract design systems and generate richer markdown from the active tab.</p>
+            </div>
+          </div>
+          <div class="topbar-meta">
+            <span class="github-badge" aria-label="Connected to GitHub">
+              <span class="github-dot"></span>
+              GitHub
+            </span>
+            <span class="badge">v1</span>
+          </div>
+        </header>
+
+        <div class="tabs" role="tablist" aria-label="Output format">
+          <button class="tab is-active" type="button" data-mode="DESIGN" aria-pressed="true">DESIGN.md</button>
+          <button class="tab" type="button" data-mode="SKILL" aria-pressed="false">SKILL.md</button>
+        </div>
+
+        <section class="profiles" aria-label="AI profiles">
+          <button class="profile-chip is-active" type="button" data-profile="claude" aria-pressed="true">
+            <span class="profile-icon profile-claude">*</span>
+            Claude
+          </button>
+          <button class="profile-chip" type="button" data-profile="codex" aria-pressed="false">
+            <span class="profile-icon profile-codex">C</span>
+            Codex
+          </button>
+          <button class="profile-chip" type="button" data-profile="cursor" aria-pressed="false">
+            <span class="profile-icon profile-cursor">[]</span>
+            Cursor
+          </button>
+          <button class="profile-chip" type="button" data-profile="stitch" aria-pressed="false">
+            <span class="profile-icon profile-stitch">S</span>
+            Stitch
+          </button>
+        </section>
+
+        <section class="status-card" id="statusCard">
+          <div class="status-copy">
+            <p class="status-title" id="sourceTitle">No site extracted yet</p>
+            <p class="status-url" id="sourceUrl">Open any website and run extraction</p>
+          </div>
+          <span class="status-pill" id="statusPill" hidden>Ready</span>
+        </section>
+
+        <section class="error-card" id="errorCard" hidden></section>
+
+        <section class="output-section">
+          <div class="section-head">
+            <h2>Generated Markdown</h2>
+            <div class="actions">
+              <button class="ghost-button" type="button" id="copyButton">Export</button>
+              <button class="ghost-button" type="button" id="refreshButton">Extract</button>
+            </div>
+          </div>
+
+          <pre class="output-panel" id="outputPanel">Extract a site to generate a clean DESIGN.md or SKILL.md.</pre>
+        </section>
+
+        <div class="credit">powered by viainti</div>
+      </section>
+    </main>
+
+    <script src="./popup.js"></script>
+  </body>
+  </html>
